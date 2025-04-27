@@ -30,14 +30,14 @@ Note that in this iteration, the system will not support to view financial news 
 
 The `StockSymbols` table includes:
 
-* `stock_symbol`, which specifies the unique identifier for the stock as a `TEXT`. This column thus has the `PRIMARY KEY` constraint applied.
+* `stock_symbol`, which specifies the unique identifier for the stock as `TEXT`. This column thus has the `PRIMARY KEY` constraint applied.
 
 * `company_name`, which specifies the description/name of the company as `TEXT`, given `TEXT` is appropriate for name fields. NOT NULL constraint applies.
 
 
 The `StockPriceHistory` table includes:
 
-* `stock_symbol`, which specifies the identifier for the stock as a `TEXT`. This column thus is part of the composite `PRIMARY KEY` along with `trade_date`. There is ON DELETE RESTRICT constraint on the FOREIGN KEY referencing "StockSymbols" table to prevent the user to delete records from "StockSymbols" if there are still records in "StockPriceHistory" table associated with that stock.
+* `stock_symbol`, which specifies the identifier for the stock as `TEXT`. This column thus is part of the composite `PRIMARY KEY` along with `trade_date`. There is ON DELETE RESTRICT constraint on the FOREIGN KEY referencing "StockSymbols" table to prevent the user to delete records from "StockSymbols" if there are still records in "StockPriceHistory" table associated with that stock.
 
 * `trade_date`, which specifies the date of the transaction as `TEXT`, given `TEXT` is appropriate for dates in SQLITE. NOT NULL constraint applies.
 
@@ -55,15 +55,15 @@ The `StockPriceHistory` table includes:
 
 The `industries` table includes:
 
-* `industry_id`, which specifies the unique identifier to the industry as a `INTEGER`. This column thus has the `PRIMARY KEY` constraint applied along with  AUTOINCREMENT.
+* `industry_id`, which specifies the unique identifier to the industry as `INTEGER`. This column thus has the `PRIMARY KEY` constraint applied along with  AUTOINCREMENT.
 
 * `industry_name`, which specifies the name of the industry as `TEXT`, given `TEXT` is appropriate for name fields. NOT NULL UNIQUE constraints apply to ensure that every industry has a name and that no two industries have the exact same name.
 
 The `StockIndustries` junction table includes:
 
-* `stock_symbol`, which specifies the unique identifier for the stock as a `TEXT`. This column thus has a composite `PRIMARY KEY` constraint applied along with `industry_id`. There is ON DELETE RESTRICT constraint on the FOREIGN KEY referencing "StockSymbols" table to prevent the user to delete records from "StockSymbols" if if there are still records in "StockIndustries" associated with that stock.
+* `stock_symbol`, which specifies the unique identifier for the stock as `TEXT`. This column thus has a composite `PRIMARY KEY` constraint applied along with `industry_id`. There is ON DELETE RESTRICT constraint on the FOREIGN KEY referencing "StockSymbols" table to prevent the user to delete records from "StockSymbols" if if there are still records in "StockIndustries" associated with that stock.
 
-* `industry_id`, which specifies the unique identifier to the industry as a `INTEGER`.
+* `industry_id`, which specifies the unique identifier to the industry as `INTEGER`.
 There is ON DELETE RESTRICT constraint on the FOREIGN KEY referencing "Industries" table to prevent the user to delete records from "Industries" table if there are still records in "StockIndustries" associated with that industry.
 
 
