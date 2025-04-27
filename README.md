@@ -6,12 +6,12 @@ Video overview: https://youtu.be/jsBKVazEOj0?feature=shared
 
 ## Scope
 
-The database for CS50 SQL includes all entities necessary to facilitate the process of store and retrieve historical prices and trading volumes of stocks of interest.  As such, included in the database's scope is:
+The database for CS50 SQL includes all entities necessary to store and retrieve historical prices and trading volumes of stocks of interest. As such, the database's scope includes:
 
-* Companies, including the industry where they belong to and their symbols which are the unique identifiers.
+* Companies, including their industry and unique identifiers (symbols).
 * Historical stock data, including opening and closing prices, among others.
 
-Out of scope include investor information, real-time data, news sentiment.
+Out of scope includes investor information, real-time data, news sentiment.
 
 ## Functional Requirements
 
